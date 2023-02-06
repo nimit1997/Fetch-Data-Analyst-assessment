@@ -1,0 +1,12 @@
+-- What user bought the most expensive item?
+SELECT USER_ID
+FROM receipts
+ORDER BY TOTAL_SPENT DESC
+LIMIT 1;
+
+-- What is the name of the most expensive item purchased?
+
+SELECT DESCRIPTION, (TOTAL_FINAL_PRICE/QUANTITY_PURCHASED) as cost_per_item
+FROM receipt_items
+ORDER_BY cost_per_item DESC
+LIMIT 1;
